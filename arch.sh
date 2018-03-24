@@ -18,8 +18,8 @@ echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 echo "KEYMAP=br-abnt2" >> /etc/vconsole.conf
 echo "$HOSTNAME" >> /etc/hostname
 
-vi /etc/locale.gen  ###Uncomment en_US.UTF-8 UTF-8
-EDITOR=vi visudo ###Uncomment %wheel ALL = ALL
+nano /etc/locale.gen  ###Uncomment en_US.UTF-8 UTF-8
+EDITOR=nano visudo ###Uncomment %wheel ALL = ALL
 
 locale-gen
 mkinitcpio -p linux
@@ -50,9 +50,9 @@ sudo dhcpcd enp0s3
 /////// INSTALL KDE!!! ///////
 sudo pacman -Sy plasma-meta sddm xorg xorg-xinit ttf-dejavu ttf-liberation networkmanager
 sudo pacman -Sy konsole okular ark kate gwenview dolphin p7zip unrar tar rsync linux-headers
-sudo vi /etc/X11/xinit/xinitrc ###Comment all exec and add exec startkde
-sudo systemctl enable NetworkManager.service
-sudo systemctl enable sddm.service
+sudo nano /etc/X11/xinit/xinitrc ###Comment all exec and add exec startkde
+sudo systemctl enable NetworkManager
+sudo systemctl enable sddm
 sudo reboot
 
 /////// INSTALL GNOME ///////
@@ -92,12 +92,9 @@ pacman -Syu yaourt && yaourt -Syu
 
 // INSTALL BROWSERS //
 sudo pacman -S firefox chromium opera
-yaourt -S google-chrome vivaldi
 
 # GNOME PACKAGES: PACKAGE="gnome-calculator qbittorrent tilda pidgin plank pavucontrol pulseaudio"
 # KDE PACKAGES: PACKAGE="kcalc ktorrent yakuake kdenetwork-kget kdenetwork-kopete amarok kdeconnect kompare ksysguard latte-dock"
-
-sudo pacman -Sy flashplugin
 
 gpg --recv-keys --keyserver hkp://18.9.60.141 5CC908FDB71E12C2
 
@@ -109,7 +106,7 @@ sudo usermod -aG docker $USER && sudo usermod -aG vboxusers $USER && sudo modpro
 
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-yaourt -S wps-office spotify neofetch-git sublime-text-dev visual-studio-code gitkraken gargoyle-git franz-bin smartgit
+yaourt -S google-chrome vivaldi wps-office spotify neofetch-git sublime-text-dev visual-studio-code-bin gitkraken gargoyle-git rambox smartgit postman sweethome3d
 
 sudo pacman -S nvidia nvidia-utils mesa xf86-video-intel bumblebee lib32-virtualgl lib32-nvidia-utils
 
@@ -119,4 +116,4 @@ sudo usermod -aG bumblebee eder && sudo systemctl enable bumblebeed.service
 
 
 
-"update_check": false
+# "update_check": false
