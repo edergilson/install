@@ -9,5 +9,6 @@ sudo pacman -Sy konsole okular ark kate gwenview dolphin p7zip unrar tar rsync l
 # sudo nano /etc/X11/xinit/xinitrc ###Comment all exec and add exec startkde
 sudo cp /etc/X11/xinit/xinitrc ~/.xinitrc
 sed -i '/exec /s/^/# /g' ~/.xinitrc
+echo "exec startkde" >> ~/.xinitrc
 sudo systemctl enable NetworkManager
 sudo systemctl enable sddm
