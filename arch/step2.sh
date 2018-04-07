@@ -9,11 +9,11 @@ echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 echo "KEYMAP=br-abnt2" >> /etc/vconsole.conf
 echo "$HOSTNAME" >> /etc/hostname
 
-nano /etc/locale.gen  ###Uncomment en_US.UTF-8 UTF-8 and pt_BR.UTF-8 UTF-8
-# sed -i '/en_US.UTF-8/s/^#//g' /etc/locale.gen
-# sed -i '/pt_BR.UTF-8/s/^#//g' /etc/locale.gen
-EDITOR=nano visudo ###Uncomment %wheel ALL = ALL
-# sed -i '/sudo /s/^# //g' /etc/sudoers
+# nano /etc/locale.gen  ###Uncomment en_US.UTF-8 UTF-8 and pt_BR.UTF-8 UTF-8
+sed -i '/en_US.UTF-8/s/^#//g' /etc/locale.gen
+sed -i '/pt_BR.UTF-8/s/^#//g' /etc/locale.gen
+# EDITOR=nano visudo ###Uncomment %wheel ALL = ALL
+sed -i '/^# %wheel ALL=(ALL) ALL$/s/^# //g' /etc/sudoers
 
 locale-gen
 mkinitcpio -p linux
