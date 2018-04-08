@@ -10,5 +10,5 @@ mount /dev/sda$2 /mnt/boot
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bkp
 echo "Server = http://archlinux.c3sl.ufpr.br/\$repo/os/\$arch" > /etc/pacman.d/mirrorlist
 
-pacstrap /mnt base base-devel grub-efi-x86_64 efibootmgr
+pacstrap /mnt base base-devel grub-efi-x86_64 efibootmgr intel-ucode os-prober git
 genfstab -U /mnt >> /mnt/etc/fstab
