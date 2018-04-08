@@ -18,10 +18,10 @@ sed -i '/^# %wheel ALL=(ALL) ALL$/s/^# //g' /etc/sudoers
 locale-gen
 mkinitcpio -p linux
 
-echo -r "$1" | passwd
+echo -e $1"\\"$1 | (passwd --stdin)
 
 useradd $USERNAME
-echo -r "$1" | passwd $USERNAME
+echo -e $1"\\"$1 | (passwd --stdin $USERNAME)
 gpasswd -a $USERNAME sudo
 gpasswd -a $USERNAME power
 gpasswd -a $USERNAME users
