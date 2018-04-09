@@ -18,21 +18,27 @@ sed -i '/^# %wheel ALL=(ALL) ALL$/s/^# //g' /etc/sudoers
 locale-gen
 mkinitcpio -p linux
 
-echo -e $1"\\"$1 | (passwd --stdin)
+# echo -e $1"\\"$1 | (passwd --stdin)
 
 useradd $USERNAME
-echo -e $1"\\"$1 | (passwd --stdin $USERNAME)
-gpasswd -a $USERNAME sudo
+# echo -e $1"\\"$1 | (passwd --stdin $USERNAME)
+gpasswd -a $USERNAME wheel
 gpasswd -a $USERNAME power
 gpasswd -a $USERNAME users
 gpasswd -a $USERNAME storage
+gpasswd -a $USERNAME log
 mkdir -p /home/$USERNAME/Documents
 mkdir -p /home/$USERNAME/Downloads/Torrents/.files
 mkdir -p /home/$USERNAME/Music/.others
 mkdir -p /home/$USERNAME/Pictures/.others
 mkdir -p /home/$USERNAME/Pictures/Wallpapers/.others
 mkdir -p /home/$USERNAME/Videos/.others
-chown $USERNAME:$USERNAME /home/$USERNAME
+chown -R $USERNAME:$USERNAME /home/$USERNAME
 
 grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=Arch
 grub-mkconfig -o /boot/grub/grub.cfg
+
+echo "Please change the ROOT password and the $USERNAME password with the following code and reboot:"
+echo "---"
+echo "passwd"
+echo "passwd $USERNAME"
