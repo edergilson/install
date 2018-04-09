@@ -1,10 +1,8 @@
 echo "
-
 [multilib]
 Include = /etc/pacman.d/mirrorlist" | sudo tee -a /etc/pacman.conf
 
 echo "
-
 [archlinuxfr]
 SigLevel = Never
 Server = http://repo.archlinux.fr/\$arch" | sudo tee -a /etc/pacman.conf
