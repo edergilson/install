@@ -9,11 +9,11 @@ echo "
 SigLevel = Never
 Server = http://repo.archlinux.fr/\$arch" | sudo tee -a /etc/pacman.conf
 
-sudo pacman -S nvidia nvidia-utils mesa xf86-video-intel bumblebee lib32-virtualgl lib32-nvidia-utils
+sudo pacman -Sy nvidia nvidia-utils mesa xf86-video-intel bumblebee lib32-virtualgl lib32-nvidia-utils
 
 sudo usermod -aG bumblebee eder && sudo systemctl enable bumblebeed.service
 
-pacman -Syu yaourt && yaourt -Syu
+pacman -Sy yaourt && yaourt -Sy
 
 // INSTALL BROWSERS //
 sudo pacman -S firefox chromium opera
