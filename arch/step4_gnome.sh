@@ -11,7 +11,7 @@ sudo pacman -Sy nvidia nvidia-utils mesa xf86-video-intel bumblebee lib32-virtua
 
 sudo usermod -aG bumblebee eder && sudo systemctl enable bumblebeed.service
 
-pacman -Sy yaourt && yaourt -Sy
+sudo pacman -Syu yaourt && yaourt -Syu
 
 // INSTALL BROWSERS //
 sudo pacman -S firefox chromium opera
