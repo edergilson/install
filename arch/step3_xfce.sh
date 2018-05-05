@@ -12,4 +12,8 @@ sed -i '/exec /s/^/# /g' ~/.xinitrc
 echo "exec startxfce4" >> ~/.xinitrc
 sudo chmod +x ~/.xinitrc
 sudo systemctl enable NetworkManager
-sudo reboot
+sudo systemctl enable lightdm
+echo "Change the file /etc/lightdm/lightdm.conf and add:"
+echo "greeter-session=lightdm-gtk-greeter"
+echo "---"
+# sudo reboot
