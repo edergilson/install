@@ -7,13 +7,13 @@ echo "
 SigLevel = Never
 Server = http://repo.archlinux.fr/\$arch" | sudo tee -a /etc/pacman.conf
 
+sudo pacman -Syu yaourt && yaourt -Syu
+
 sudo pacman -Sy nvidia nvidia-utils mesa xf86-video-intel bumblebee lib32-virtualgl lib32-nvidia-utils
 
 sudo usermod -aG bumblebee eder && sudo systemctl enable bumblebeed.service
 
-sudo pacman -Syu yaourt && yaourt -Syu
-
-// INSTALL BROWSERS //
+## INSTALL BROWSERS ##
 sudo pacman -S firefox chromium opera
 
 PACKAGE="qbittorrent pidgin plank pavucontrol pulseaudio"
