@@ -7,7 +7,7 @@ echo "
 SigLevel = Never
 Server = http://repo.archlinux.fr/\$arch" | sudo tee -a /etc/pacman.conf
 
-sudo pacman -Syu yaourt && yaourt -Syu
+sudo pacman -Syu yaourt && yaourt -Syua
 
 sudo pacman -Sy nvidia nvidia-utils mesa xf86-video-intel bumblebee lib32-virtualgl lib32-nvidia-utils
 
