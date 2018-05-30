@@ -7,13 +7,13 @@ echo "
 SigLevel = Never
 Server = http://repo.archlinux.fr/\$arch" | sudo tee -a /etc/pacman.conf
 
+sudo pacman -Syu yaourt && yaourt -Syu
+
 sudo pacman -Sy nvidia nvidia-utils mesa xf86-video-intel bumblebee lib32-virtualgl lib32-nvidia-utils
 
 sudo usermod -aG bumblebee eder && sudo systemctl enable bumblebeed.service
 
-sudo pacman -Syu yaourt && yaourt -Syu
-
-// INSTALL BROWSERS //
+## INSTALL BROWSERS ##
 sudo pacman -S firefox chromium opera
 
 PACKAGE="gnome-calculator qbittorrent tilda guake pidgin plank pavucontrol pulseaudio"
@@ -28,16 +28,16 @@ sudo usermod -aG docker $USER && sudo usermod -aG vboxusers $USER && sudo modpro
 
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-yaourt -S google-chrome 
-yaourt -S vivaldi 
-yaourt -S wps-office 
-yaourt -S spotify 
-yaourt -S neofetch-git 
-yaourt -S sublime-text-dev 
-yaourt -S visual-studio-code-bin 
-yaourt -S gitkraken 
-yaourt -S gargoyle-git 
-yaourt -S rambox 
-yaourt -S smartgit 
-yaourt -S postman 
-yaourt -S sweethome3d
+#yaourt -S google-chrome 
+#yaourt -S vivaldi 
+#yaourt -S wps-office 
+#yaourt -S spotify 
+#yaourt -S neofetch-git 
+#yaourt -S sublime-text-dev 
+#yaourt -S visual-studio-code-bin 
+#yaourt -S gitkraken 
+#yaourt -S gargoyle-git 
+#yaourt -S rambox 
+#yaourt -S smartgit 
+#yaourt -S postman 
+#yaourt -S sweethome3d
