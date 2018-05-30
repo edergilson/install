@@ -9,3 +9,5 @@ sed -i '/exec /s/^/# /g' ~/.xinitrc
 echo "exec gnome-session" >> ~/.xinitrc
 sudo systemctl enable NetworkManager
 sudo systemctl enable gdm
+
+sudo reboot
