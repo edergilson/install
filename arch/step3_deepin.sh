@@ -12,5 +12,5 @@ sudo systemctl enable NetworkManager.service
 sudo systemctl enable lightdm
 
 sudo sed -i '/#greeter-session=/s/^#//g' /etc/lightdm/lightdm.conf
-sudo sed -i '/#greeter-session=/example-gtk-gnome/lightdm-deepin-greeter/g' /etc/lightdm/lightdm.conf
+sudo sed -i '/^greeter-session=/s/example-gtk-gnome/lightdm-deepin-greeter/g' /etc/lightdm/lightdm.conf
 sudo reboot
