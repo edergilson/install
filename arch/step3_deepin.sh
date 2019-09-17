@@ -11,8 +11,6 @@ echo "exec startdde" >> ~/.xinitrc
 sudo systemctl enable NetworkManager.service
 sudo systemctl enable lightdm
 
-echo "Edit the lightdm.conf with:"
-echo "---"
-echo "greeter-session=lightdm-deepin-greeter"
-read -p "Press enter to edit lightdm.conf:"
-sudo nano /etc/lightdm/lightdm.conf ###edit greeter-session=lightdm-deepin-greeter
+sudo sed -i '/#greeter-session=/s/^#//g' /etc/lightdm/lightdm.conf
+sudo sed -i '/#greeter-session=/example-gtk-gnome/lightdm-deepin-greeter/g' /etc/lightdm/lightdm.conf
+sudo reboot
