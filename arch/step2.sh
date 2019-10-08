@@ -1,7 +1,7 @@
 #!/bin/bash
 
 USERNAME="eder"
-HOSTNAME="Arch-Aspire-E5-573G"
+HOSTNAME="Arch-Ideapad-320-15IKB"
 
 ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 hwclock --systohc
