@@ -33,6 +33,7 @@ mkdir -p /home/$USERNAME/Music/.others
 mkdir -p /home/$USERNAME/Pictures/.others
 mkdir -p /home/$USERNAME/Pictures/Wallpapers/.others
 mkdir -p /home/$USERNAME/Videos/.others
+mkdir -p /home/$USERNAME/Public
 chown -R $USERNAME:$USERNAME /home/$USERNAME
 
 grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=Arch
