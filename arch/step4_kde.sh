@@ -32,17 +32,5 @@ sudo usermod -aG docker $USER && sudo usermod -aG vboxusers $USER && sudo modpro
 
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-yay -S google-chrome 
-yay -S opera-ffmpeg-codecs 
-yay -S vivaldi 
-yay -S wps-office ttf-wps-fonts wps-office-extension-portuguese-brazilian-dictionary 
-yay -S spotify 
-yay -S neofetch-git 
-yay -S sublime-text-dev 
-yay -S visual-studio-code-bin 
-yay -S gitkraken 
-yay -S gargoyle-git 
-yay -S rambox 
-yay -S smartgit 
-yay -S insomnia 
-yay -S sweethome3d sweethome3d-furniture-library
+yay -S google-chrome opera-ffmpeg-codecs vivaldi libreoffice-fresh spotify neofetch-git sublime-text-dev visual-studio-code-bin gitkraken gargoyle-git rambox-bin smartgit insomnia sweethome3d sweethome3d-furniture-library brave-bin 
+yay -S latte-dock-git libdbusmenu-gtk3 lib32-libdbusmenu-gtk3 appmenu-gtk-module-git breeze-enhanced-git openvpn networkmanager-openvpn plasma5-applets-window-title-git plasma5-applets-window-appmenu-git plasma5-applets-window-buttons-git
