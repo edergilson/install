@@ -24,7 +24,7 @@ sudo usermod -aG docker $USER && sudo usermod -aG vboxusers $USER && sudo modpro
 
 sudo sed 's/; default-sample-rate = 44100/default-sample-rate = 48000/g' -i /etc/pulse/daemon.conf
 
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+cd ~ && sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 yay -S google-chrome opera-ffmpeg-codecs vivaldi libreoffice-fresh spotify neofetch-git sublime-text-dev visual-studio-code-bin gitkraken gargoyle-git rambox-bin smartgit insomnia sweethome3d sweethome3d-furniture-library brave-bin freerdp-git
 
