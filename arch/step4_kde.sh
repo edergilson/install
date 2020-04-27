@@ -1,7 +1,3 @@
-echo "
-[multilib]
-Include = /etc/pacman.d/mirrorlist" | sudo tee -a /etc/pacman.conf
-
 sudo pacman -Syu
 
 git clone https://aur.archlinux.org/yay.git ~/yay && cd ~/yay && makepkg -si && sudo rm -rf ~/yay && yay --editmenu --nodiffmenu --save
@@ -12,10 +8,6 @@ sudo sed -i '/#TotalDownload/s/#//g' /etc/pacman.conf
 sudo sed -i '/#VerbosePkgLists/s/#//g' /etc/pacman.conf
 
 sudo pacman -Syu && yay -Syua
-
-sudo pacman -S nvidia nvidia-utils mesa xf86-video-intel bumblebee lib32-virtualgl lib32-nvidia-utils
-
-sudo usermod -aG bumblebee eder && sudo systemctl enable bumblebeed.service
 
 ## INSTALL BROWSERS ##
 sudo pacman -S firefox chromium opera
