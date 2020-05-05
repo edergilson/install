@@ -28,4 +28,4 @@ cd ~ && sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master
 
 yay -S google-chrome opera-ffmpeg-codecs vivaldi libreoffice-fresh spotify neofetch-git sublime-text-dev visual-studio-code-bin gitkraken gargoyle-git rambox-bin smartgit insomnia sweethome3d sweethome3d-furniture-library brave-bin freerdp-git
 
-yay -S latte-dock-git libdbusmenu-gtk3 lib32-libdbusmenu-gtk3 appmenu-gtk-module-git breeze-enhanced-git openvpn networkmanager-openvpn plasma5-applets-window-title-git plasma5-applets-window-appmenu-git plasma5-applets-window-buttons-git kwin-effect-shapecorners-git libinput-gestures kwin-scripts-parachute plasma5-applets-eventcalendar
+yay -S latte-dock libdbusmenu-gtk3 lib32-libdbusmenu-gtk3 appmenu-gtk-module-git breeze-enhanced-git openvpn networkmanager-openvpn plasma5-applets-window-title plasma5-applets-window-appmenu plasma5-applets-window-buttons kwin-effect-shapecorners-git libinput-gestures plasma5-applets-eventcalendar
