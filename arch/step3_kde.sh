@@ -8,7 +8,7 @@ echo "
 [multilib]
 Include = /etc/pacman.d/mirrorlist" | sudo tee -a /etc/pacman.conf
 
-sudo pacman -Sy nvidia nvidia-utils mesa xf86-video-intel nvidia-prime lib32-virtualgl lib32-nvidia-utils
+sudo pacman -Sy nvidia nvidia-utils mesa xf86-video-intel bumblebee lib32-virtualgl lib32-nvidia-utils
 sudo usermod -aG bumblebee eder && sudo systemctl enable bumblebeed.service
 
 sudo pacman -Sy plasma-meta sddm xorg xorg-xinit ttf-dejavu ttf-liberation libinput xf86-input-evdev networkmanager
