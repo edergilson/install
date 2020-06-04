@@ -13,9 +13,7 @@ sudo sed -i '/#VerbosePkgLists/s/#//g' /etc/pacman.conf
 
 sudo pacman -Syu && yay -Syua
 
-sudo pacman -S nvidia nvidia-utils mesa xf86-video-intel bumblebee lib32-virtualgl lib32-nvidia-utils
-
-sudo usermod -aG bumblebee eder && sudo systemctl enable bumblebeed.service
+sudo pacman -Sy nvidia nvidia-utils mesa nvidia-prime nvidia-settings lib32-virtualgl lib32-nvidia-utils
 
 ## INSTALL BROWSERS ##
 sudo pacman -S firefox chromium opera
@@ -32,18 +30,6 @@ sudo usermod -aG docker $USER && sudo usermod -aG vboxusers $USER && sudo modpro
 
 sudo sed 's/; default-sample-rate = 44100/default-sample-rate = 48000/g' -i /etc/pulse/daemon.conf
 
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+cd ~ && sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-yay -S google-chrome 
-yay -S opera-ffmpeg-codecs
-yay -S vivaldi 
-yay -S wps-office ttf-wps-fonts wps-office-extension-portuguese-brazilian-dictionary 
-yay -S spotify 
-yay -S neofetch-git 
-yay -S sublime-text-dev 
-yay -S visual-studio-code-bin 
-yay -S gitkraken 
-yay -S gargoyle-git 
-yay -S smartgit 
-yay -S insomnia 
-yay -S sweethome3d
+yay -S google-chrome opera-ffmpeg-codecs vivaldi libreoffice-fresh spotify neofetch-git pfetch sublime-text-dev sublime-merge visual-studio-code-bin gitkraken gargoyle-git smartgit insomnia
