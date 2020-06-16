@@ -2,12 +2,16 @@ echo "
 [multilib]
 Include = /etc/pacman.d/mirrorlist" | sudo tee -a /etc/pacman.conf
 
-echo "
-[archlinuxfr]
-SigLevel = Never
-Server = http://repo.archlinux.fr/\$arch" | sudo tee -a /etc/pacman.conf
+sudo pacman -Syu
 
-sudo pacman -Syu yaourt && yaourt -Syu
+git clone https://aur.archlinux.org/yay.git ~/yay && cd ~/yay && makepkg -si && sudo rm -rf ~/yay && yay --editmenu --nodiffmenu --save
+
+sudo sed -i '/#UseSyslog/s/#//g' /etc/pacman.conf
+sudo sed -i '/#Color/s/#//g' /etc/pacman.conf
+sudo sed -i '/#TotalDownload/s/#//g' /etc/pacman.conf
+sudo sed -i '/#VerbosePkgLists/s/#//g' /etc/pacman.conf
+
+sudo pacman -Syu && yay -Syua
 
 sudo pacman -Sy nvidia nvidia-utils mesa xf86-video-intel bumblebee lib32-virtualgl lib32-nvidia-utils
 
@@ -30,16 +34,4 @@ sudo sed 's/; default-sample-rate = 44100/default-sample-rate = 48000/g' -i /etc
 
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-#yaourt -S google-chrome 
-#yaourt -S vivaldi 
-#yaourt -S wps-office 
-#yaourt -S spotify 
-#yaourt -S neofetch-git 
-#yaourt -S sublime-text-dev 
-#yaourt -S visual-studio-code-bin 
-#yaourt -S gitkraken 
-#yaourt -S gargoyle-git 
-#yaourt -S rambox 
-#yaourt -S smartgit 
-#yaourt -S postman 
-#yaourt -S sweethome3d
+#yay -S google-chrome vivaldi spotify neofetch-git sublime-text-dev visual-studio-code-bin gitkraken gargoyle-git rambox-bin smartgit insomnia sweethome3d
