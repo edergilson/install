@@ -29,6 +29,7 @@ gpasswd -a $USERNAME storage
 gpasswd -a $USERNAME log
 mkdir -p /home/$USERNAME/Documents
 mkdir -p /home/$USERNAME/Downloads/Torrents/.files
+mkdir -p /home/$USERNAME/Downloads/Torrents/.incomplete
 mkdir -p /home/$USERNAME/Music/.others
 mkdir -p /home/$USERNAME/Pictures/.others
 mkdir -p /home/$USERNAME/Pictures/Wallpapers/.others
