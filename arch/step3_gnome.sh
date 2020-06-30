@@ -1,7 +1,11 @@
 #!/bin/bash
 
-sudo ip link set $1 up
-sudo dhcpcd $1
+#sudo ip link set $1 up
+#sudo dhcpcd $1
+
+echo "
+[multilib]
+Include = /etc/pacman.d/mirrorlist" | sudo tee -a /etc/pacman.conf
 
 sudo pacman -Sy nvidia nvidia-utils mesa bumblebee nvidia-settings lib32-virtualgl lib32-nvidia-utils
 sudo usermod -aG bumblebee eder && sudo systemctl enable bumblebeed.service
