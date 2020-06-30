@@ -1,7 +1,3 @@
-echo "
-[multilib]
-Include = /etc/pacman.d/mirrorlist" | sudo tee -a /etc/pacman.conf
-
 sudo pacman -Syu
 
 git clone https://aur.archlinux.org/yay.git ~/yay && cd ~/yay && makepkg -si && sudo rm -rf ~/yay && yay --editmenu --nodiffmenu --save
