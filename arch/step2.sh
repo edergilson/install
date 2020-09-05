@@ -27,9 +27,12 @@ gpasswd -a $USERNAME power
 gpasswd -a $USERNAME users
 gpasswd -a $USERNAME storage
 gpasswd -a $USERNAME log
+gpasswd -a $USERNAME input
 mkdir -p /home/$USERNAME/Documents
 mkdir -p /home/$USERNAME/Downloads/Torrents/.files
 mkdir -p /home/$USERNAME/Downloads/Torrents/.incomplete
+mkdir -p /home/$USERNAME/Games
+mkdir -p /home/$USERNAME/Lutris
 mkdir -p /home/$USERNAME/Music/.others
 mkdir -p /home/$USERNAME/Pictures/.others
 mkdir -p /home/$USERNAME/Pictures/Wallpapers/.others
