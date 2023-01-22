@@ -2,7 +2,7 @@
 
 # sudo ip link set $1 up
 # sudo dhcpcd $1
-sudo rfkill unblock wifi
+#sudo rfkill unblock wifi
 sudo wifi-menu
 
 ####### INSTALL KDE!!! #######
