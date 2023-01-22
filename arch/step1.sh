@@ -3,7 +3,7 @@
 #loadkeys br-abnt2
 #rfkill unblock wifi
 #wifi-menu
-timedatectl set-ntp true
+#timedatectl set-ntp true
 
 #mkfs.ext4 -F /dev/sdb$1
 #mount /dev/sdb$1 /mnt
