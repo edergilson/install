@@ -40,3 +40,4 @@ sudo apt -f install -y google-chrome-stable code firefox zsh vlc clementine yout
 sudo usermod -aG docker $USER && sudo systemctl enable docker
 wget https://downloads.slack-edge.com/releases/linux/4.37.101/prod/x64/slack-desktop-4.37.101-amd64.deb
 sudo dpkg -i ./slack-desktop-4.37.101-amd64.deb
+sudo sh -c 'echo GRUB_RECORDFAIL_TIMEOUT=0 > /etc/default/grub.d/51_fix_efiboot.cfg'; sudo update-grub
