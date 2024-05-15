@@ -49,7 +49,7 @@ sudo dnf copr enable -y observeroftime/betterdiscordctl
 sudo dnf config-manager --enable google-chrome
 
 # Apps
-sudo dnf install -y unzip p7zip p7zip-plugins unrar fish clementine youtube-dl audacity meld htop btop tilix docker docker-compose steam lutris git discord google-chrome-stable code microsoft-edge-stable sublime-text brave-browser lpf-spotify-client betterdiscordctl
+sudo dnf install -y unzip p7zip p7zip-plugins unrar fish vim gnome-tweaks clementine youtube-dl audacity meld htop btop tilix docker docker-compose steam lutris git discord google-chrome-stable code microsoft-edge-stable sublime-text brave-browser lpf-spotify-client betterdiscordctl
 
 # Install Oh-My-Fish
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
