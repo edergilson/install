@@ -57,6 +57,13 @@ sudo usermod -aG docker $USER && sudo systemctl enable docker
 # Install SierraBreezeEnhanced Theme
 sudo dnf install -y cmake extra-cmake-modules kf6-kiconthemes-devel qt6-qt5compat-devel kf6-kcmutils-devel qt6-qtbase-private-devel kf6-kcoreaddons-devel "cmake(Qt6Core)" "cmake(Qt6Gui)" "cmake(Qt6DBus)" "cmake(KF6GuiAddons)" "cmake(KF6WindowSystem)" "cmake(KF6I18n)" "cmake(KDecoration2)" "cmake(KF6CoreAddons)" "cmake(KF6ConfigWidgets)"
 git clone https://github.com/kupiqu/SierraBreezeEnhanced.git ~/Git/SierraBreezeEnhanced/ && cd ~/Git/SierraBreezeEnhanced/ && chmod +x install.sh && ./install.sh
+
+# Install Applets
+sudo dnf install -y kf6-ksvg-devel kf6-kdeclarative-devel libplasma-devel
+git clone https://github.com/moodyhunter/applet-window-buttons6.git ~/Git/applet-window-buttons6/
+cd ~/Git/applet-window-buttons6/
+./install.sh
+
 # Install Oh-My-Fish
 chsh -s /usr/bin/fish
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
