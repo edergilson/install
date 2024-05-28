@@ -64,7 +64,7 @@ git clone https://github.com/moodyhunter/applet-window-buttons6.git ~/Git/applet
 cd ~/Git/applet-window-buttons6/
 ./install.sh
 
-git clone https://github.com/dhruv8sh/plasma6-window-title-applet.git /usr/share/plasma/plasmoids/org.kde.windowtitle && rm /usr/share/plasma/plasmoids/org.kde.windowtitle/README.md
+sudo git clone https://github.com/dhruv8sh/plasma6-window-title-applet.git /usr/share/plasma/plasmoids/org.kde.windowtitle && sudo rm /usr/share/plasma/plasmoids/org.kde.windowtitle/README.md
 
 # Install Oh-My-Fish
 chsh -s /usr/bin/fish
