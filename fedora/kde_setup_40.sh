@@ -13,6 +13,10 @@ deltarpm=true" | sudo tee -a /etc/dnf/dnf.conf
 
 # Install RPM Fusion
 sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+## If not working, remove the RPM Fusion Rawhide with te command
+## sudo dnf config-manager --set-disabled rpmfusion-free-rawhide
+## Then enable the correct version
+## sudo dnf config-manager --set-enabled rpmfusion-free
 sudo dnf groupupdate -y core
 
 # Update files
@@ -44,6 +48,7 @@ sudo dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/edge
 sudo dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
 sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
 sudo dnf copr enable -y observeroftime/betterdiscordctl
+sudo dnf copr enable -y hazel-bunny/ricing
 
 # Enable packages
 sudo dnf config-manager --enable google-chrome
@@ -65,6 +70,9 @@ cd ~/Git/applet-window-buttons6/
 ./install.sh
 
 sudo git clone https://github.com/dhruv8sh/plasma6-window-title-applet.git /usr/share/plasma/plasmoids/org.kde.windowtitle && sudo rm /usr/share/plasma/plasmoids/org.kde.windowtitle/README.md
+
+# Hazzel Ricing new Items
+sudo dnf install -y appmenu-gtk-module chatai-plasmoid kwin-effects-forceblur lightlyshaders qt6-gtk2-platform-theme
 
 # Install Oh-My-Fish
 chsh -s /usr/bin/fish
