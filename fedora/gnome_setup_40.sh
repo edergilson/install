@@ -1,5 +1,9 @@
 #/bin/sh
 
+# Fix Dell Latitude 7420 slow CPU
+sudo rmmod intel_rapl_msr
+echo "blacklist intel_rapl_msr" | sudo tee -a /etc/modprobe.d/intel_rapl_msr-blacklist.conf
+
 # Fast Updates
 echo "[main] 
 gpgcheck=1 
