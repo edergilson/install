@@ -43,6 +43,9 @@ sudo dnf config-manager setopt google-chrome.enabled=true
 
 # Apps
 sudo dnf install -y unzip p7zip p7zip-plugins unrar fish vim gnome-tweaks clementine youtube-dl audacity meld htop btop tilix docker docker-compose steam lutris git discord google-chrome-stable code microsoft-edge-stable sublime-text brave-browser lpf-spotify-client betterdiscordctl
+sudo dnf install -y mesa-dri-drivers.i686 mesa-libGL.i686 xorg-x11-drv-intel
+
+flatpak install flathub io.github.lime3ds.Lime3DS net.kuribo64.melonDS net.pcsx2.PCSX2 com.snes9x.Snes9x io.mgba.mGBA org.ryujinx.Ryujinx nz.mega.MEGAsync
 
 # Install Oh-My-Fish
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
