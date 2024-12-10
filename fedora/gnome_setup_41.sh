@@ -33,7 +33,7 @@ sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 
 # Adding Repos
 printf "[vscode]\nname=packages.microsoft.com\nbaseurl=https://packages.microsoft.com/yumrepos/vscode/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc\nmetadata_expire=1h" | sudo tee -a /etc/yum.repos.d/vscode.repo
-sudo dnf config-manager addrepo --from-repofile=https://packages.microsoft.com/yumrepos/edge
+echo -e "[microsoft-edge]\nname=microsoft-edge\nbaseurl=https://packages.microsoft.com/yumrepos/edge/\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc"|sudo tee /etc/yum.repos.d/microsoft-edge.repo
 sudo dnf config-manager addrepo --from-repofile=https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
 sudo dnf config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
 sudo dnf copr enable -y observeroftime/betterdiscordctl
