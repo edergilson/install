@@ -1,7 +1,7 @@
 #!/bin/bash
 
 USERNAME="eder"
-HOSTNAME="Arch-Ideapad-320-15IKB"
+HOSTNAME="Arch-Nitro5"
 
 ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 hwclock --systohc
@@ -13,7 +13,7 @@ echo "$HOSTNAME" >> /etc/hostname
 sed -i '/en_US.UTF-8/s/^#//g' /etc/locale.gen
 sed -i '/pt_BR.UTF-8/s/^#//g' /etc/locale.gen
 # EDITOR=nano visudo ###Uncomment %wheel ALL = ALL
-sed -i '/^# %wheel ALL=(ALL) ALL$/s/^# //g' /etc/sudoers
+sed -i '/^# %wheel ALL=(ALL:ALL) ALL$/s/^# //g' /etc/sudoers
 
 locale-gen
 mkinitcpio -p linux
