@@ -3,7 +3,7 @@
 set -e 
 
 echo "-------------------------------------------------------"
-echo "Begin installation
+echo "Begin installation"
 echo "-------------------------------------------------------"
 
 # sudo ip link set eth0 up
