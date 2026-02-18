@@ -43,6 +43,8 @@ chown -R $USERNAME:$USERNAME /home/$USERNAME
 grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=Arch
 grub-mkconfig -o /boot/grub/grub.cfg
 
+systemctl enable NetworkManager
+
 echo "Please change the ROOT password and the $USERNAME password with the following code and reboot:"
 echo "---"
 echo "passwd"
