@@ -9,6 +9,10 @@ echo "-------------------------------------------------------"
 # sudo ip link set eth0 up
 # sudo dhcpcd eth0
 
+echo "
+[multilib]
+Include = /etc/pacman.d/mirrorlist" | sudo tee -a /etc/pacman.conf
+
 sudo pacman -Syu --noconfirm
 
 # 2. Drivers de Vídeo (Otimizado para Intel Iris Xe)
