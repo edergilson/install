@@ -15,29 +15,16 @@ echo ":: Preparando dependências e Yay..."
 sudo pacman -S --needed --noconfirm base-devel git
 
 if ! command -v yay &> /dev/null; then
-    git clone https://aur.archlinux.org/yay.git
-    cd yay
-    makepkg -si --noconfirm
-    cd ..
-    rm -rf yay
+    git clone https://aur.archlinux.org/yay.git ~/Git/yay && cd ~/Git/yay && makepkg -si --noconfirm && cd ~ rm -rf ~/Git/yay
 fi
 
 # 2. Tipografia (Fontes solicitadas)
 echo ":: Instalando fontes (Inter, Hack, Hack Nerd Font)..."
-sudo pacman -S --noconfirm \
-    inter-font \
-    ttf-hack \
-    ttf-hack-nerd \
-    ttf-jetbrains-mono-nerd \
-    noto-fonts-emoji
+sudo pacman -S --noconfirm inter-font ttf-hack ttf-hack-nerd ttf-jetbrains-mono-nerd noto-fonts-emoji
 
 # 3. Codecs de Áudio, Vídeo e Suporte a Mídia
 echo ":: Instalando principais codecs e bibliotecas de mídia..."
-sudo pacman -S --noconfirm \
-    alsa-utils pulseaudio-alsa \
-    gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-libav \
-    libdvdcss libde265 libva-intel-driver \
-    ffmpeg flac wavpack
+sudo pacman -S --noconfirm alsa-utils pulseaudio-alsa gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-libav libdvdcss libde265 libva-intel-driver ffmpeg flac wavpack
 
 # 4. Navegadores e Comunicação
 echo ":: Instalando navegadores e ferramentas de comunicação..."
@@ -50,10 +37,8 @@ yay -S --noconfirm vscodium-bin sublime-text-4 insomnia-bin dbgate-bin genymotio
 
 # 6. Virtualização e Containers
 echo ":: Configurando Docker e VirtualBox..."
-sudo pacman -S --noconfirm docker docker-compose virtualbox virtualbox-host-modules-arch
-sudo usermod -aG docker $USER
-sudo usermod -aG vboxusers $USER
-sudo systemctl enable --now docker.service
+sudo pacman -S --noconfirm docker docker-compose docker-buildx virtualbox virtualbox-host-modules-arch
+sudo usermod -aG docker $USER && sudo usermod -aG vboxusers $USER && sudo systemctl enable --now docker.service
 
 # 7. Games e Torrent
 echo ":: Instalando Steam, Lutris e Gerenciador de Torrent..."
@@ -61,10 +46,7 @@ sudo pacman -S --noconfirm steam lutris qbittorrent
 
 # 8. Utilitários do Sistema (Thunar, PDF, Calculadora, etc)
 echo ":: Instalando utilitários do sistema..."
-sudo pacman -S --noconfirm \
-    thunar thunar-archive-plugin thunar-volman tumbler \
-    file-roller kcalc zathura zathura-pdf-mupdf \
-    mpv amberol gvfs gvfs-mtp gvfs-smb
+sudo pacman -S --noconfirm thunar thunar-archive-plugin thunar-volman tumbler file-roller kcalc zathura zathura-pdf-mupdf mpv amberol gvfs gvfs-mtp gvfs-smb
 
 # 9. Estética e SDDM
 echo ":: Configurando tema do SDDM e Interface..."
