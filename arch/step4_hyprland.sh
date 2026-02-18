@@ -24,7 +24,7 @@ sudo pacman -S --noconfirm inter-font ttf-hack ttf-hack-nerd ttf-jetbrains-mono-
 
 # 3. Codecs de Áudio, Vídeo e Suporte a Mídia
 echo ":: Instalando principais codecs e bibliotecas de mídia..."
-sudo pacman -S --noconfirm alsa-utils pulseaudio-alsa gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-libav libdvdcss libde265 libva-intel-driver ffmpeg flac wavpack
+sudo pacman -S --noconfirm alsa-utils pulseaudio-alsa gst-plugins-good gst-plugins-bad gst-plugins-ugly exfat-utils fuse-exfat a52dec faac faad2 flac jasper lame libdca libdv gst-libav libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore libdvdcss libdvdread libdvdnav dvd+rw-tools dvdauthor dvgrab cups libde265 libva-intel-driver ffmpeg
 
 # 4. Navegadores e Comunicação
 echo ":: Instalando navegadores e ferramentas de comunicação..."
@@ -38,7 +38,7 @@ yay -S --noconfirm vscodium-bin sublime-text-4 insomnia-bin dbgate-bin genymotio
 # 6. Virtualização e Containers
 echo ":: Configurando Docker e VirtualBox..."
 sudo pacman -S --noconfirm docker docker-compose docker-buildx virtualbox virtualbox-host-modules-arch
-sudo usermod -aG docker $USER && sudo usermod -aG vboxusers $USER && sudo systemctl enable --now docker.service
+sudo usermod -aG docker $USER && sudo usermod -aG vboxusers $USER && sudo systemctl enable --now docker.service && sudo systemctl enable --now bluetooth
 
 # 7. Games e Torrent
 echo ":: Instalando Steam, Lutris e Gerenciador de Torrent..."
@@ -46,16 +46,8 @@ sudo pacman -S --noconfirm steam lutris qbittorrent
 
 # 8. Utilitários do Sistema (Thunar, PDF, Calculadora, etc)
 echo ":: Instalando utilitários do sistema..."
-sudo pacman -S --noconfirm thunar thunar-archive-plugin thunar-volman tumbler file-roller kcalc zathura zathura-pdf-mupdf mpv amberol gvfs gvfs-mtp gvfs-smb
-
-# 9. Estética e SDDM
-echo ":: Configurando tema do SDDM e Interface..."
-yay -S --noconfirm sddm-theme-sugar-candy-git
-sudo mkdir -p /etc/sddm.conf.d
-cat <<EOF | sudo tee /etc/sddm.conf.d/theme.conf
-[Theme]
-Current=sugar-candy
-EOF
+sudo pacman -S --noconfirm thunar thunar-archive-plugin thunar-volman tumbler file-roller kcalc zathura zathura-pdf-mupdf mpv amberol gvfs gvfs-mtp gvfs-smb fish vlc audacity meld htop btop steam p7zip unrar tar rsync ntfs-3g
+yy -S --noconfirm neofetch-git gargoyle-git wine-staging lutris pfetch-git
 
 sudo pacman -S --noconfirm papirus-icon-theme nwg-look qt5ct qt6ct
 
