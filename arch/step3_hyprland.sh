@@ -16,7 +16,7 @@ Include = /etc/pacman.d/mirrorlist" | sudo tee -a /etc/pacman.conf
 sudo pacman -Syu --noconfirm
 
 # 2. Drivers de Vídeo (Otimizado para Intel Iris Xe)
-sudo pacman -S --noconfirm mesa lib32-mesa vulkan-intel lib32-vulkan-intel intel-media-driver libva-intel-driver
+sudo pacman -S --noconfirm mesa lib32-mesa vulkan-intel vulkan-headers lib32-vulkan-intel intel-media-driver libva-intel-driver
 sudo pacman -S --noconfirm hyprland kitty xdg-desktop-portal-hyprland polkit-kde-agent qt5-wayland qt6-wayland pipewire wireplumber
 
 echo ":: Instalando SDDM..."
@@ -34,7 +34,7 @@ mkdir -p ~/.config/waybar
 
 cat <<EOF > ~/.config/hypr/hyprland.conf
 # --- Monitors ---
-monitor=DP-1, 2560x1080@74.99, 0x0, 1
+monitor=DP-5, 2560x1080@74.99, 0x0, 1
 monitor=eDP-1, 1920x1080@60, 320x1080, 1
 
 # --- Autorun ---
