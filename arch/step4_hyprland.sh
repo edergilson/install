@@ -24,7 +24,7 @@ sudo pacman -S --noconfirm inter-font ttf-hack ttf-hack-nerd ttf-jetbrains-mono-
 
 # 3. Codecs de Áudio, Vídeo e Suporte a Mídia
 echo ":: Instalando principais codecs e bibliotecas de mídia..."
-sudo pacman -S --noconfirm alsa-utils alsa-ucm-conf pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber sof-firmware gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-libav ffmpeg libva-intel-driver
+sudo pacman -S --noconfirm alsa-utils alsa-ucm-conf pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber sof-firmware gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-libav ffmpeg libva-intel-driver pavucontrol
 
 # 4. Navegadores e Comunicação
 echo ":: Instalando navegadores e ferramentas de comunicação..."
