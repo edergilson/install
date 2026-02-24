@@ -46,7 +46,7 @@ sudo pacman -S --noconfirm steam lutris qbittorrent
 
 # 8. Utilitários do Sistema (Thunar, PDF, Calculadora, etc)
 echo ":: Instalando utilitários do sistema..."
-sudo pacman -S --noconfirm dolphin dolphin-plugins ark okular elisa haruna kcalc kcolorchooser gwenview kio kio-extras kio-gdrive kio-admin kdegraphics-thumbnailers ffmpegthumbnailer mpv fish vlc audacity htop btop steam p7zip unrar tar rsync ntfs-3g
+sudo pacman -S --noconfirm dolphin dolphin-plugins ark okular elisa haruna kcalc kcolorchooser gwenview kio kio-extras kio-gdrive kio-admin kdegraphics-thumbnailers ffmpegthumbnailer mpv fish vlc audacity htop btop steam p7zip unrar tar rsync ntfs-3g kdialog
 yay -S --noconfirm neofetch-git gargoyle-git wine-staging lutris pfetch-git
 
 sudo pacman -S --noconfirm xdg-desktop-portal-hyprland xdg-desktop-portal-kde xdg-desktop-portal-gtk kde-gtk-config papirus-icon-theme nwg-look qt5ct qt6ct breeze-icons
