@@ -49,7 +49,7 @@ echo ":: Instalando utilitários do sistema..."
 sudo pacman -S --noconfirm dolphin dolphin-plugins ark okular elisa haruna kcalc kcolorchooser gwenview kio kio-extras kio-gdrive kio-admin kdegraphics-thumbnailers ffmpegthumbnailer mpv fish vlc audacity htop btop steam p7zip unrar tar rsync ntfs-3g kdialog
 yay -S --noconfirm neofetch-git gargoyle-git wine-staging lutris pfetch-git
 
-sudo pacman -S --noconfirm xdg-desktop-portal-hyprland xdg-desktop-portal-kde xdg-desktop-portal-gtk kde-gtk-config papirus-icon-theme nwg-look qt5ct qt6ct breeze-icons breeze-gtk
+sudo pacman -S --noconfirm xdg-desktop-portal-hyprland xdg-desktop-portal-kde xdg-desktop-portal-gtk kde-gtk-config papirus-icon-theme nwg-look qt5ct qt6ct breeze-icons breeze-gtk qt5-styleplugins qt6-styleplugins
 
 # 9. Noctalia Shell
 echo ":: Instalando o Noctalia Shell ..."
