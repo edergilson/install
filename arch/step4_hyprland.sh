@@ -12,7 +12,7 @@ echo "-------------------------------------------------------"
 
 # 1. Preparação e AUR Helper (Yay)
 echo ":: Preparando dependências e Yay..."
-sudo pacman -S --needed --noconfirm base-devel git
+sudo pacman -S --needed --noconfirm base-devel git wget
 
 if ! command -v yay &> /dev/null; then
     git clone https://aur.archlinux.org/yay.git ~/Git/yay && cd ~/Git/yay && makepkg -si --noconfirm && cd ~ && rm -rf ~/Git/yay
