@@ -6,24 +6,20 @@ sudo sed -i '/#UseSyslog/s/#//g' /etc/pacman.conf
 sudo sed -i '/#Color/s/#//g' /etc/pacman.conf
 sudo sed -i '/#TotalDownload/s/#//g' /etc/pacman.conf
 sudo sed -i '/#VerbosePkgLists/s/#//g' /etc/pacman.conf
+echo "
+ILoveCandy" | sudo tee -a /etc/pacman.conf
 
 sudo pacman -Syu && yay -Syua
 
-## INSTALL BROWSERS ##
-sudo pacman -S firefox
+KDEPACKAGES="kcalc ktorrent yakuake kget kdeconnect kompare korganizer kmail spectacle elisa falkon kdevelop kdevelop-php ffmpegthumbnailer ffmpegthumbs"
+CODECS="exfat-utils fuse-exfat a52dec faac faad2 flac jasper lame libdca libdv gst-libav libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore libdvdcss libdvdread libdvdnav dvd+rw-tools dvdauthor dvgrab"
+APPS="fish vlc virtualbox audacity meld htop docker docker-compose steam git gimp	gimp-help-pt_br haruna vivaldi vivaldi-ffmpeg-codecs"
 
-PACKAGE="kcalc ktorrent yakuake kget kdeconnect kompare ksysguard korganizer kmail spectacle elisa falkon kdevelop kdevelop-php ffmpegthumbnailer ffmpegthumbs"
+YAYAPPS="google-chrome libreoffice-fresh neofetch pfetch pacfetch steamfetch-bin zeitfetch pridefetch sublime-text-4 visual-studio-code-bin gargoyle brave-bin wine-staging lutris megasync-bin pear-desktop vesktop-bin spotify spicetify-cli insomnia-bin dbgate-bin zen-browser-bin genymotion clementine"
+YAYPLUGINS="libdbusmenu-gtk3 lib32-libdbusmenu-gtk3 appmenu-gtk-module-git breeze-enhanced sierra-breeze-enhanced plasma6-applet-freeradio plasma6-applets-eventcalendar plasma6-applets-panel-spacer-extended plasma6-applets-arch-update-notifier plasma6-applets-kara-git plasma6-wallpapers-blurredwallpaper-git plasma6-applets-window-title plasma6-applets-uswitch plasma6-applets-panel-colorizer plasma6-wallpapers-smart-video-wallpaper-reborn plasma6-applets-kurve-git plasma6-applets-wallpaper-effects plasma6-applets-resources-monitor firefox-globalmenu firefox-extension-enhancer-for-youtube-bin multi-account-containers-lite"
 
-gpg --recv-keys --keyserver hkp://18.9.60.141 5CC908FDB71E12C2
+sudo pacman -S $KDEPACKAGES $CODECS $APPS
 
-sudo pacman -S exfat-utils fuse-exfat a52dec faac faad2 flac jasper lame libdca libdv gst-libav libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore libdvdcss libdvdread libdvdnav dvd+rw-tools dvdauthor dvgrab cups
+sudo usermod -aG docker $USER && sudo usermod -aG vboxusers $USER && sudo modprobe vboxdrv && sudo systemctl enable --now docker && sudo systemctl enable --now bluetooth
 
-sudo pacman -S fish vlc clementine virtualbox youtube-dl audacity meld htop docker docker-compose dbeaver steam git xdotool pulseaudio-bluetooth tlp tlp-rdw $PACKAGE
-
-sudo usermod -aG docker $USER && sudo usermod -aG vboxusers $USER && sudo modprobe vboxdrv && sudo systemctl enable tlp && sudo systemctl start tlp && sudo systemctl enable docker && sudo systemctl enable bluetooth
-
-sudo sed 's/; default-sample-rate = 44100/default-sample-rate = 48000/g' -i /etc/pulse/daemon.conf
-
-yay -S google-chrome libreoffice-fresh neofetch-git sublime-text-4 visual-studio-code-bin gitkraken gargoyle-git ferdium-bin smartgit sweethome3d sweethome3d-furniture-library brave-bin wine-staging lutris
-
-yay -S latte-dock-git libdbusmenu-gtk3 lib32-libdbusmenu-gtk3 appmenu-gtk-module-git breeze-enhanced-git plasma5-applets-window-title-git plasma5-applets-window-appmenu-git plasma5-applets-window-buttons-git kwin-effect-shapecorners-git libinput-gestures-git plasma5-applets-eventcalendar pfetch-git
+yay -S $YAYAPPS $YAYPLUGINS
