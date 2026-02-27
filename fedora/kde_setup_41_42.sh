@@ -37,7 +37,7 @@ sudo dnf copr enable -y hazel-bunny/ricing
 sudo dnf config-manager setopt google-chrome.enabled=true
 
 # Apps
-sudo dnf install -y mesa-dri-drivers.i686 mesa-libGL.i686 xorg-x11-drv-intel unzip p7zip p7zip-plugins unrar fish vim gnome-tweaks clementine youtube-dl audacity meld htop btop tilix docker docker-compose steam lutris git discord google-chrome-stable code microsoft-edge-stable sublime-text betterdiscordctl
+sudo dnf install -y mesa-dri-drivers.i686 mesa-libGL.i686 xorg-x11-drv-intel unzip p7zip p7zip-plugins unrar fish vim clementine youtube-dl audacity meld htop btop docker docker-compose steam lutris git discord google-chrome-stable code microsoft-edge-stable sublime-text betterdiscordctl
 
 # Flatpaks
 flatpak install flathub io.github.lime3ds.Lime3DS net.kuribo64.melonDS net.pcsx2.PCSX2 com.snes9x.Snes9x io.mgba.mGBA org.ryujinx.Ryujinx nz.mega.MEGAsync
