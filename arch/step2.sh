@@ -1,26 +1,26 @@
 #!/bin/bash
 
 USERNAME="eder"
-HOSTNAME="Arch-Nitro5"
+#HOSTNAME="Arch-Nitro5"
 
-ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
-hwclock --systohc
-echo "LANG=en_US.UTF-8" >> /etc/locale.conf
-echo "KEYMAP=br-abnt2" >> /etc/vconsole.conf
-echo "$HOSTNAME" >> /etc/hostname
+#ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
+#hwclock --systohc
+#echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+#echo "KEYMAP=br-abnt2" >> /etc/vconsole.conf
+#echo "$HOSTNAME" >> /etc/hostname
 
 # nano /etc/locale.gen  ###Uncomment en_US.UTF-8 UTF-8 and pt_BR.UTF-8 UTF-8
-sed -i '/en_US.UTF-8/s/^#//g' /etc/locale.gen
-sed -i '/pt_BR.UTF-8/s/^#//g' /etc/locale.gen
+#sed -i '/en_US.UTF-8/s/^#//g' /etc/locale.gen
+#sed -i '/pt_BR.UTF-8/s/^#//g' /etc/locale.gen
 # EDITOR=nano visudo ###Uncomment %wheel ALL = ALL
-sed -i '/^# %wheel ALL=(ALL:ALL) ALL$/s/^# //g' /etc/sudoers
+#sed -i '/^# %wheel ALL=(ALL:ALL) ALL$/s/^# //g' /etc/sudoers
 
-locale-gen
-mkinitcpio -p linux
+#locale-gen
+#mkinitcpio -p linux
 
 # echo -e $1"\\"$1 | (passwd --stdin)
 
-useradd $USERNAME
+#useradd $USERNAME
 # echo -e $1"\\"$1 | (passwd --stdin $USERNAME)
 gpasswd -a $USERNAME wheel
 gpasswd -a $USERNAME power
@@ -40,12 +40,12 @@ mkdir -p /home/$USERNAME/Videos/.others
 mkdir -p /home/$USERNAME/Public
 chown -R $USERNAME:$USERNAME /home/$USERNAME
 
-grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=Arch
-grub-mkconfig -o /boot/grub/grub.cfg
+#grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=Arch
+#grub-mkconfig -o /boot/grub/grub.cfg
 
-systemctl enable NetworkManager
+#systemctl enable NetworkManager
 
-echo "Please change the ROOT password and the $USERNAME password with the following code and reboot:"
-echo "---"
-echo "passwd"
-echo "passwd $USERNAME"
+#echo "Please change the ROOT password and the $USERNAME password with the following code and reboot:"
+#echo "---"
+#echo "passwd"
+#echo "passwd $USERNAME"
