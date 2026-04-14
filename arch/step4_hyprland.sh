@@ -14,8 +14,8 @@ echo "-------------------------------------------------------"
 echo ":: Preparando dependências e Yay..."
 sudo pacman -S --needed --noconfirm base-devel git wget
 
-if ! command -v yay &> /dev/null; then
-    git clone https://aur.archlinux.org/yay.git ~/Git/yay && cd ~/Git/yay && makepkg -si --noconfirm && cd ~ && rm -rf ~/Git/yay
+if ! command -v paru &> /dev/null; then
+    git clone https://aur.archlinux.org/paru.git ~/Git/paru && cd ~/Git/paru && makepkg -si --noconfirm && cd ~ && rm -rf ~/Git/paru
 fi
 
 # 2. Tipografia (Fontes solicitadas)
@@ -29,31 +29,34 @@ sudo pacman -S --noconfirm alsa-utils alsa-ucm-conf pipewire pipewire-alsa pipew
 # 4. Navegadores e Comunicação
 echo ":: Instalando navegadores e ferramentas de comunicação..."
 sudo pacman -S --noconfirm firefox vivaldi vivaldi-ffmpeg-codecs meld kompare
-yay -S --noconfirm brave-bin teams-for-linux-bin spotify
+paru -S --noconfirm brave-bin spotify vesktop pear-desktop
 
 # 5. Desenvolvimento e Banco de Dados
 echo ":: Instalando ferramentas de desenvolvimento..."
-yay -S --noconfirm vscodium-bin sublime-text-4 insomnia-bin dbgate-bin genymotion kate
+paru -S --noconfirm visual-studio-code-bin sublime-text-4 insomnia-bin dbgate-bin genymotion kate
 
 # 6. Virtualização e Containers
 echo ":: Configurando Docker e VirtualBox..."
-sudo pacman -S --noconfirm docker docker-compose docker-buildx virtualbox virtualbox-host-modules-arch
-sudo usermod -aG docker $USER && sudo usermod -aG vboxusers $USER && sudo systemctl enable --now docker.service && sudo systemctl enable --now bluetooth
+sudo pacman -S --noconfirm docker docker-compose docker-buildx virtualbox
+sudo usermod -aG docker $USER && sudo usermod -aG vboxusers $USER && sudo modprobe vboxdrv && sudo systemctl enable --now docker.service
 
 # 7. Games e Torrent
 echo ":: Instalando Steam, Lutris e Gerenciador de Torrent..."
-sudo pacman -S --noconfirm steam lutris qbittorrent
+sudo pacman -S --noconfirm steam lutris transmission
 
 # 8. Utilitários do Sistema (Thunar, PDF, Calculadora, etc)
 echo ":: Instalando utilitários do sistema..."
-sudo pacman -S --noconfirm dolphin dolphin-plugins ark okular elisa haruna kcalc kcolorchooser gwenview kio kio-extras kio-gdrive kio-admin kdegraphics-thumbnailers ffmpegthumbnailer mpv fish vlc audacity htop btop steam p7zip unrar tar rsync ntfs-3g kdialog
-yay -S --noconfirm neofetch-git gargoyle-git wine-staging lutris pfetch-git
+sudo pacman -S --noconfirm dolphin dolphin-plugins ark okular elisa haruna kcalc kcolorchooser gwenview kio kio-extras kio-gdrive kio-admin kdegraphics-thumbnailers ffmpegthumbnailer mpv fish vlc audacity htop btop steam p7zip unrar tar rsync ntfs-3g kdialog hyprshot libreoffice-fresh hunspell-en_US gimp gimp-help-pt_br thermald throttled
+paru -S --noconfirm neofetch pfetch pacfetch steamfetch-bin zeitfetch pridefetch gargoyle wine-staging lutris hunspell-pt-br spicetify-cli zen-browser-bin
 
-sudo pacman -S --noconfirm xdg-desktop-portal-hyprland xdg-desktop-portal-kde xdg-desktop-portal-gtk kde-gtk-config papirus-icon-theme nwg-look qt5ct qt6ct breeze-icons breeze-gtk hyprpicker hypridle
+sudo systemctl enable --now thermald && sudo systemctl enable --now throttled
+
+sudo pacman -S --noconfirm xdg-desktop-portal-hyprland xdg-desktop-portal-kde xdg-desktop-portal-gtk archlinux-xdg-menu kde-gtk-config papirus-icon-theme nwg-look qt5ct qt6ct breeze-icons breeze-gtk hyprpicker hypridle matugen firefoxpwa
+paru -S --noconfirm python-pywalfox
 
 # 9. Noctalia Shell
 echo ":: Instalando o Noctalia Shell ..."
-yay -S --noconfirm noctalia-shell cliphist cava wlsunset ddcutil
+paru -S --noconfirm noctalia-shell cliphist cava wlsunset ddcutil
 
 # 10. Variáveis de Ambiente e Fixes
 # Criando a regra de portal que discutimos para não quebrar o Teams
