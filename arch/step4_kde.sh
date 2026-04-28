@@ -25,4 +25,9 @@ sudo pacman -S $DRIVERS $ESSENTIALS $FONTS $KDEPACKAGES $CODECS $APPS
 
 sudo usermod -aG docker $USER && sudo usermod -aG vboxusers $USER && sudo modprobe vboxdrv && sudo systemctl enable --now docker && sudo systemctl enable --now thermald && sudo systemctl enable --now throttled && sudo systemctl enable --now power-profiles-daemon
 
-yay -S $YAYAPPS $YAYPLUGINS
+paru -S $YAYAPPS $YAYPLUGINS
+
+git clone https://github.com/kupiqu/SierraBreezeEnhanced.git ~/Git/SierraBreezeEnhanced/ && cd ~/Git/SierraBreezeEnhanced/ && chmod +x install.sh && ./install.sh
+git clone https://github.com/D3SOX-Forks/applet-window-buttons6.git ~/Git/applet-window-buttons6/ && cd ~/Git/applet-window-buttons6/ && ./install.sh
+git clone https://github.com/matinlotfali/KDE-Rounded-Corners.git ~/Git/KDE-Rounded-Corners && cd ~/Git/KDE-Rounded-Corners/ && mkdir build && cd build && cmake .. && cmake --build . -j && sudo make install
+git clone https://github.com/walterfang12/LightlyShaders-Plasma6.git ~/Git/LightlyShaders-Plasma6 && cd ~/Git/LightlyShaders-Plasma6/ && mkdir qt6build && cd qt6build && cmake ../ -DCMAKE_INSTALL_PREFIX=/usr && make && sudo make install
