@@ -17,14 +17,14 @@ sudo pacman -Syu --noconfirm
 
 # 2. Drivers de Vídeo (Otimizado para Intel Iris Xe)
 sudo pacman -S --noconfirm mesa lib32-mesa vulkan-intel vulkan-headers lib32-vulkan-intel intel-media-driver libva-intel-driver
-sudo pacman -S --noconfirm hyprland kitty xdg-desktop-portal-hyprland polkit-kde-agent qt5-wayland qt6-wayland pipewire wireplumber
+sudo pacman -S --noconfirm hyprland kitty xdg-desktop-portal-hyprland polkit-kde-agent qt5-wayland qt6-wayland
 
 echo ":: Instalando SDDM..."
 
 sudo pacman -S --noconfirm sddm qt6-5compat qt6-declarative qt6-svg
 sudo systemctl enable sddm
 
-sudo pacman -S --noconfirm waybar wofi hyprpaper dunst brightnessctl pamixer libnotify
+sudo pacman -S --noconfirm waybar wofi hyprpaper dunst brightnessctl libnotify
 
 sudo pacman -S --noconfirm power-profiles-daemon
 sudo systemctl enable --now power-profiles-daemon
