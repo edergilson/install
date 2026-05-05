@@ -28,7 +28,7 @@ sudo pacman -S --noconfirm alsa-utils alsa-ucm-conf pipewire pipewire-alsa pipew
 
 # 4. Navegadores e Comunicação
 echo ":: Instalando navegadores e ferramentas de comunicação..."
-sudo pacman -S --noconfirm firefox vivaldi vivaldi-ffmpeg-codecs meld kompare
+sudo pacman -S --noconfirm firefox vivaldi vivaldi-ffmpeg-codecs meld
 paru -S --noconfirm brave-bin spotify vesktop pear-desktop
 
 # 5. Desenvolvimento e Banco de Dados
@@ -37,7 +37,7 @@ paru -S --noconfirm visual-studio-code-bin sublime-text-4 insomnia-bin dbgate-bi
 
 # 6. Virtualização e Containers
 echo ":: Configurando Docker e VirtualBox..."
-sudo pacman -S --noconfirm docker docker-compose docker-buildx virtualbox
+sudo pacman -S --noconfirm docker docker-compose virtualbox
 sudo usermod -aG docker $USER && sudo usermod -aG vboxusers $USER && sudo modprobe vboxdrv && sudo systemctl enable --now docker.service
 
 # 7. Games e Torrent
@@ -46,7 +46,7 @@ sudo pacman -S --noconfirm steam lutris transmission
 
 # 8. Utilitários do Sistema (Thunar, PDF, Calculadora, etc)
 echo ":: Instalando utilitários do sistema..."
-sudo pacman -S --noconfirm dolphin dolphin-plugins ark okular elisa haruna kcalc kcolorchooser gwenview kio kio-extras kio-gdrive kio-admin kdegraphics-thumbnailers ffmpegthumbnailer mpv fish vlc audacity htop btop steam p7zip unrar tar rsync ntfs-3g kdialog hyprshot libreoffice-fresh hunspell-en_US gimp gimp-help-pt_br thermald throttled
+sudo pacman -S --noconfirm dolphin dolphin-plugins nautilus ark okular elisa haruna kcalc kcolorchooser gwenview kio kio-extras kio-gdrive kio-admin kdegraphics-thumbnailers ffmpegthumbnailer mpv fish vlc audacity btop steam p7zip unrar tar rsync ntfs-3g kdialog hyprshot libreoffice-fresh hunspell-en_US gimp gimp-help-pt_br thermald throttled
 paru -S --noconfirm neofetch pfetch pacfetch steamfetch-bin zeitfetch pridefetch gargoyle wine-staging lutris hunspell-pt-br spicetify-cli zen-browser-bin
 
 sudo systemctl enable --now thermald && sudo systemctl enable --now throttled
