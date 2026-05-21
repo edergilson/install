@@ -12,7 +12,7 @@ echo "-------------------------------------------------------"
 
 # 1. Preparação e AUR Helper (Yay)
 echo ":: Preparando dependências e Yay..."
-sudo pacman -S --needed --noconfirm base-devel git wget
+sudo pacman -S --needed --noconfirm base-devel git wget linux-zen-headers
 
 if ! command -v paru &> /dev/null; then
     git clone https://aur.archlinux.org/paru.git ~/Git/paru && cd ~/Git/paru && makepkg -si --noconfirm && cd ~ && rm -rf ~/Git/paru
@@ -42,17 +42,17 @@ sudo usermod -aG docker $USER && sudo usermod -aG vboxusers $USER && sudo modpro
 
 # 7. Games e Torrent
 echo ":: Instalando Steam, Lutris e Gerenciador de Torrent..."
-sudo pacman -S --noconfirm steam lutris transmission
+sudo pacman -S --noconfirm steam lutris transmission-qt
 
 # 8. Utilitários do Sistema (Thunar, PDF, Calculadora, etc)
 echo ":: Instalando utilitários do sistema..."
-sudo pacman -S --noconfirm dolphin dolphin-plugins nautilus ark okular elisa haruna kcalc kcolorchooser gwenview kio kio-extras kio-gdrive kio-admin kdegraphics-thumbnailers ffmpegthumbnailer mpv fish vlc audacity btop steam p7zip unrar tar rsync ntfs-3g kdialog hyprshot libreoffice-fresh hunspell-en_US gimp gimp-help-pt_br thermald throttled
-paru -S --noconfirm neofetch pfetch pacfetch steamfetch-bin zeitfetch pridefetch gargoyle wine-staging lutris hunspell-pt-br spicetify-cli zen-browser-bin
+sudo pacman -S --noconfirm dolphin dolphin-plugins nautilus ark okular elisa haruna kcalc kcolorchooser gwenview kio kio-extras kio-gdrive kio-admin kdegraphics-thumbnailers ffmpegthumbnailer mpv fish vlc audacity btop steam p7zip unrar tar rsync ntfs-3g kdialog hyprshot libreoffice-fresh hunspell-en_US gimp gimp-help-pt_br thermald throttled jdk-openjdk solaar adw-gtk-theme cpio awww
+paru -S --noconfirm neofetch pfetch pacfetch steamfetch-bin zeitfetch pridefetch gargoyle wine-staging lutris hunspell-pt-br spicetify-cli zen-browser-bin oh-my-posh-bin
 
 sudo systemctl enable --now thermald && sudo systemctl enable --now throttled
 
-sudo pacman -S --noconfirm xdg-desktop-portal-hyprland xdg-desktop-portal-kde xdg-desktop-portal-gtk archlinux-xdg-menu kde-gtk-config papirus-icon-theme nwg-look qt5ct qt6ct breeze-icons breeze-gtk hyprpicker hypridle matugen firefoxpwa
-paru -S --noconfirm python-pywalfox
+sudo pacman -S --noconfirm xdg-desktop-portal-hyprland xdg-desktop-portal-kde xdg-desktop-portal-gtk archlinux-xdg-menu kde-gtk-config papirus-icon-theme nwg-look qt5ct qt6ct breeze-icons breeze-gtk hyprpicker hypridle hyprlock matugen firefoxpwa
+paru -S --noconfirm python-pywalfox wayland-pipewire-idle-inhibit
 
 # 9. Noctalia Shell
 echo ":: Instalando o Noctalia Shell ..."
